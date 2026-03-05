@@ -1,0 +1,83 @@
+/* Tipografía base */
+:root{
+  --politica:#B11226;
+  --sociedad:#1F3C88;
+  --cultura:#F2A900;
+  --economia:#1C6B3C;
+  --opinion:#5B2D8B;
+
+  --texto:#111;
+  --gris:#666;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
+  margin:0;
+  background:white;
+  color:var(--texto);
+}
+
+/* contenedor editorial */
+.container{
+  max-width:720px;
+  margin:auto;
+  padding:40px 20px;
+}
+
+/* header */
+
+.logo{
+  width:52px;
+  margin-bottom:16px;
+}
+
+h1{
+  font-size:38px;
+  margin:0;
+}
+
+.tagline{
+  font-size:18px;
+  color:var(--gris);
+  margin-top:10px;
+  margin-bottom:60px;
+}
+
+/* lista de artículos */
+
+.article{
+  border-left:4px solid black;
+  padding-left:14px;
+  margin-bottom:40px;
+}
+
+.article h2{
+  font-size:22px;
+  margin-bottom:8px;
+}
+
+.article p{
+  color:var(--gris);
+  margin-top:0;
+}
+
+/* categorías */
+
+.politica{ border-color:var(--politica); }
+.sociedad{ border-color:var(--sociedad); }
+.cultura{ border-color:var(--cultura); }
+.economia{ border-color:var(--economia); }
+.opinion{ border-color:var(--opinion); }
+
+a{
+  text-decoration:none;
+  color:inherit;
+}
+
+a:hover{
+  text-decoration:underline;
+}

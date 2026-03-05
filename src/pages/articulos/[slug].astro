@@ -1,0 +1,44 @@
+---
+import { getCollection } from "astro:content";
+
+export async function getStaticPaths() {
+  const articulos = await getCollection("articulos");
+
+  return articulos.map((articulo) => ({
+    params: { slug: articulo.slug },
+    props: { articulo }
+  }));
+}
+
+const { articulo } = Astro.props;
+---
+
+<html lang="es">
+
+<head>
+<meta charset="UTF-8" />
+<link rel="stylesheet" href="/src/styles/global.css">
+<title>{articulo.data.title}</title>
+</head>
+
+<body>
+
+<div class="container">
+
+<a href="/">← Punto y Coma</a>
+
+<h1>{articulo.data.title}</h1>
+
+<p class="tagline">{articulo.data.descripcion}</p>
+
+<article class={articulo.data.categoria}>
+
+<Fragment set:html={articulo.body} />
+
+</article>
+
+</div>
+
+</body>
+
+</html>

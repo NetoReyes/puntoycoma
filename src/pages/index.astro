@@ -1,0 +1,59 @@
+---
+import "../styles/global.css";
+import { getCollection } from "astro:content";
+
+const articulos = await getCollection("articulos");
+---
+
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<title>Punto y Coma</title>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<img src="/logo.png" class="logo" alt="Punto y coma"/>
+
+<h1>Punto y Coma</h1>
+
+<p class="tagline">
+La noticia no termina cuando se informa; empieza cuando se entiende.
+</p>
+
+
+<section>
+
+{articulos.map((articulo) => (
+  <article class={`article ${articulo.data.categoria}`}>
+
+    <h2>
+      <a href={`/articulos/${articulo.slug}`}>
+        {articulo.data.title}
+      </a>
+    </h2>
+
+    <p>{articulo.data.descripcion}</p>
+
+  </article>
+))}
+
+</section>
+
+</article>
+
+</div>
+
+</body>
+
+</html>

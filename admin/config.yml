@@ -1,0 +1,19 @@
+backend:
+  name: git-gateway
+  branch: main
+
+media_folder: "public/img"
+public_folder: "/img"
+
+collections:
+  - name: "articulos"
+    label: "Artículos"
+    folder: "src/content/articulos"
+    create: true
+    slug: "{{slug}}"
+    fields:
+      - { label: "Título", name: "title", widget: "string" }
+      - { label: "Descripción", name: "descripcion", widget: "string" }
+      - { label: "Categoría", name: "categoria", widget: "select", options: ["politica","sociedad","cultura","economia","opinion"] }
+      - { label: "Fecha", name: "fecha", widget: "datetime" }
+      - { label: "Contenido", name: "body", widget: "markdown" }

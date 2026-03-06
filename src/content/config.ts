@@ -6,7 +6,8 @@ const articulos = defineCollection({
     title: z.string(),
     descripcion: z.string(),
     categoria: z.enum(["politica","sociedad","cultura","economia","opinion"]),
-    fecha: z.date()
+    fecha: z.date(),
+    cover: z.string().optional()
   })
 });
 

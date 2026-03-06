@@ -1,14 +1,17 @@
 ---
 import "../../styles/global.css";
-import { getEntryBySlug } from "astro:content";
+import { getCollection } from "astro:content";
 
-const { slug } = Astro.params;
+export async function getStaticPaths() {
+  const articulos = await getCollection("articulos");
 
-const articulo = await getEntryBySlug("articulos", slug);
-
-if (!articulo) {
-  throw new Error("Artículo no encontrado");
+  return articulos.map((articulo) => ({
+    params: { slug: articulo.slug },
+    props: { articulo }
+  }));
 }
+
+const { articulo } = Astro.props;
 
 const { Content } = await articulo.render();
 ---

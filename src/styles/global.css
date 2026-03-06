@@ -227,6 +227,28 @@ a:hover {
 .cat-line {
   width: 6px;
   height: 14px;
-  background: currentColor;
+  background: currentcolor;
   display: inline-block;
+}
+.secundarios {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.sec-card {
+  text-decoration: none;
+  color: black;
+}
+
+.sec-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.sec-info h3 {
+  font-size: 22px;
+  margin-top: 6px;
 }

@@ -189,28 +189,28 @@ a:hover {
 
 /* Colores editoriales Punto y Coma */
 
-.hero.politica .hero-cat,
-.hero.politica .card-cat {
+.politica .hero-cat,
+.politica .card-cat {
   color: #B11226;
 }
 
-.hero.sociedad .hero-cat,
-.hero.sociedad .card-cat {
+.sociedad .hero-cat,
+.sociedad .card-cat {
   color: #1F3C88;
 }
 
-.hero.cultura .hero-cat,
-.hero.cultura .card-cat {
+.cultura .hero-cat,
+.cultura .card-cat {
   color: #F2A900;
 }
 
-.hero.economia .hero-cat,
-.hero.economia .card-cat {
+.economia .hero-cat,
+.economia .card-cat {
   color: #1C6B3C;
 }
 
-.hero.opinion .hero-cat,
-.hero.opinion .card-cat {
+.opinion .hero-cat,
+.opinion .card-cat {
   color: #5B2D8B;
 }
 

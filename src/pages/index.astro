@@ -9,9 +9,11 @@ const ordenados = articulos.sort(
   (a, b) => new Date(b.data.fecha) - new Date(a.data.fecha)
 );
 
-// primer artículo = principal
+// principal
 const principal = ordenados[0];
-const secundarios = articulos.slice(1,3);
+
+// secundarios
+const secundarios = ordenados.slice(1,3);
 
 // resto
 const recientes = ordenados.slice(1);
@@ -107,38 +109,6 @@ La noticia no termina cuando se informa; empieza cuando se entiende.
 
 </section>
 
-<section class="secundarios">
-
-{secundarios.map((articulo) => (
-
-<a class={`sec-card ${articulo.data.categoria}`} href={`/articulos/${articulo.slug}`}>
-
-{articulo.data.cover && (
-<img src={articulo.data.cover} />
-)}
-
-<div class="sec-info">
-
-<span class="card-cat">
-
-<span class="cat-line"></span>
-
-{articulo.data.categoria}
-
-</span>
-
-<h3>
-{articulo.data.title}
-</h3>
-
-</div>
-
-</a>
-
-))}
-
-</section>
-
 <section class="recent">
 
 <h2>Artículos recientes</h2>
@@ -147,13 +117,14 @@ La noticia no termina cuando se informa; empieza cuando se entiende.
 
 {recientes.map((articulo) => (
 
-<a class="card" href={`/articulos/${articulo.slug}`}>
+<a class={`card ${articulo.data.categoria}`} href={`/articulos/${articulo.slug}`}>
 
 {articulo.data.cover && (
 <img src={articulo.data.cover} />
 )}
 
 <span class="card-cat">
+<span class="cat-line"></span>
 {articulo.data.categoria}
 </span>
 

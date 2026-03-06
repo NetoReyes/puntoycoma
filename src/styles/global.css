@@ -186,22 +186,46 @@ a:hover {
   font-size: 20px;
   margin-top: 5px;
 }
-.cultura .hero-cat {
-  color: #c0392b;
+
+/* Colores editoriales Punto y Coma */
+
+.politica .hero-cat,
+.politica .card-cat {
+  color: #B11226;
 }
 
-.politica .hero-cat {
-  color: #2c3e50;
+.sociedad .hero-cat,
+.sociedad .card-cat {
+  color: #1F3C88;
 }
 
-.sociedad .hero-cat {
-  color: #16a085;
+.cultura .hero-cat,
+.cultura .card-cat {
+  color: #F2A900;
 }
 
-.economia .hero-cat {
-  color: #d35400;
+.economia .hero-cat,
+.economia .card-cat {
+  color: #1C6B3C;
 }
 
-.opinion .hero-cat {
-  color: #8e44ad;
+.opinion .hero-cat,
+.opinion .card-cat {
+  color: #5B2D8B;
+}
+.hero-cat {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.cat-line {
+  width: 6px;
+  height: 14px;
+  background: currentColor;
+  display: inline-block;
 }

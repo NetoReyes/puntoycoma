@@ -1,24 +1,30 @@
 ---
-import { getCollection } from "astro:content";
+import "../../styles/global.css";
+import { getEntryBySlug } from "astro:content";
 
-export async function getStaticPaths() {
-  const articulos = await getCollection("articulos");
+const { slug } = Astro.params;
 
-  return articulos.map((articulo) => ({
-    params: { slug: articulo.slug },
-    props: { articulo }
-  }));
+const articulo = await getEntryBySlug("articulos", slug);
+
+if (!articulo) {
+  throw new Error("Artículo no encontrado");
 }
 
-const { articulo } = Astro.props;
+const { Content } = await articulo.render();
 ---
 
 <html lang="es">
 
 <head>
+
 <meta charset="UTF-8" />
-<link rel="stylesheet" href="/src/styles/global.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
 <title>{articulo.data.title}</title>
+
 </head>
 
 <body>
@@ -31,11 +37,13 @@ const { articulo } = Astro.props;
 
 <p class="tagline">{articulo.data.descripcion}</p>
 
-<article class={articulo.data.categoria}>
+<hr>
 
-<Fragment set:html={articulo.body} />
+<div class="contenido">
 
-</article>
+<Content />
+
+</div>
 
 </div>
 

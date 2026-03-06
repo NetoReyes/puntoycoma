@@ -1,83 +1,74 @@
-/* Tipografía base */
-:root{
-  --politica:#B11226;
-  --sociedad:#1F3C88;
-  --cultura:#F2A900;
-  --economia:#1C6B3C;
-  --opinion:#5B2D8B;
-
-  --texto:#111;
-  --gris:#666;
+body {
+  font-family: 'Inter', sans-serif;
+  margin: 0;
+  background: #ffffff;
+  color: #111;
+  line-height: 1.6;
 }
 
-*{
-  box-sizing:border-box;
+.container {
+  max-width: 820px;
+  margin: auto;
+  padding: 40px 20px;
 }
 
-body{
-  font-family:'Inter',system-ui,-apple-system,BlinkMacSystemFont,sans-serif;
-  margin:0;
-  background:white;
-  color:var(--texto);
+.header {
+  padding: 40px 20px;
 }
 
-/* contenedor editorial */
-.container{
-  max-width:720px;
-  margin:auto;
-  padding:40px 20px;
+.logo {
+  width: 40px;
+  margin-bottom: 10px;
 }
 
-/* header */
-
-.logo{
-  width:52px;
-  margin-bottom:16px;
+h1 {
+  font-size: 42px;
+  margin: 0;
 }
 
-h1{
-  font-size:38px;
-  margin:0;
+.tagline {
+  color: #666;
+  margin-top: 8px;
 }
 
-.tagline{
-  font-size:18px;
-  color:var(--gris);
-  margin-top:10px;
-  margin-bottom:60px;
+h2 {
+  margin-top: 60px;
+  font-size: 22px;
 }
 
-/* lista de artículos */
-
-.article{
-  border-left:4px solid black;
-  padding-left:14px;
-  margin-bottom:40px;
+.hero {
+  padding: 30px 0;
+  border-bottom: 1px solid #eee;
 }
 
-.article h2{
-  font-size:22px;
-  margin-bottom:8px;
+.hero h3 {
+  font-size: 28px;
+  margin-bottom: 10px;
 }
 
-.article p{
-  color:var(--gris);
-  margin-top:0;
+.article {
+  margin-top: 20px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #eee;
 }
 
-/* categorías */
-
-.politica{ border-color:var(--politica); }
-.sociedad{ border-color:var(--sociedad); }
-.cultura{ border-color:var(--cultura); }
-.economia{ border-color:var(--economia); }
-.opinion{ border-color:var(--opinion); }
-
-a{
-  text-decoration:none;
-  color:inherit;
+.article h3 {
+  font-size: 20px;
+  margin-bottom: 6px;
 }
 
-a:hover{
-  text-decoration:underline;
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  opacity: 0.7;
+}
+
+.footer {
+  margin-top: 80px;
+  padding: 40px;
+  text-align: center;
+  color: #666;
 }

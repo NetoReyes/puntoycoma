@@ -98,3 +98,21 @@ a:hover {
   border-left: 4px solid #5B2D8B;
   padding-left: 16px;
 }
+.contenido {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.contenido p {
+  margin-bottom: 20px;
+}
+
+.contenido h2 {
+  margin-top: 40px;
+}
+
+.contenido blockquote {
+  border-left: 4px solid #ddd;
+  padding-left: 16px;
+  color: #555;
+}

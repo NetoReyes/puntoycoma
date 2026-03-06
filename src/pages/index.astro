@@ -51,6 +51,7 @@ La noticia no termina cuando se informa; empieza cuando se entiende.
 <h2>Historia principal</h2>
 
 <article class={`article ${principal.data.categoria}`}>
+<pre>{JSON.stringify(principal.data, null, 2)}</pr
 
 {principal.data.cover ? (
   <img src={principal.data.cover} class="cover" />

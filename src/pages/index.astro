@@ -48,23 +48,31 @@ La noticia no termina cuando se informa; empieza cuando se entiende.
 
 <section class="hero">
 
-<h2>Historia principal</h2>
+<article class="hero">
 
-<article class={`article ${principal.data.categoria}`}>
+{principal.data.cover && (
+  <img src={principal.data.cover} class="hero-img" />
+)}
 
-{principal.data.cover ? (
-  <img src={principal.data.cover} class="cover" />
-) : null}
+<div class="hero-info">
 
-<h3>
+<span class="hero-cat">
+{principal.data.categoria}
+</span>
+
+<h2 class="hero-title">
 
 <a href={`/articulos/${principal.slug}`}>
 {principal.data.title}
 </a>
 
-</h3>
+</h2>
 
-<p>{principal.data.descripcion}</p>
+<p class="hero-desc">
+{principal.data.descripcion}
+</p>
+
+</div>
 
 </article>
 

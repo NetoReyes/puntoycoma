@@ -252,3 +252,25 @@ a:hover {
   font-size: 22px;
   margin-top: 6px;
 }
+.portada {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 40px;
+  margin-top: 40px;
+}
+
+.secundarios {
+  display: grid;
+  gap: 25px;
+}
+
+.sec-card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 8px;
+}
+
+.sec-info h3 {
+  font-size: 20px;
+  margin-top: 5px;
+}

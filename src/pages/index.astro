@@ -52,7 +52,9 @@ La noticia no termina cuando se informa; empieza cuando se entiende.
 
 <article class={`article ${principal.data.categoria}`}>
 
-<img src="/frankenstein.jpg" class="cover" />
+{principal.data.cover ? (
+  <img src={principal.data.cover} class="cover" />
+) : null}
 
 <h3>
 

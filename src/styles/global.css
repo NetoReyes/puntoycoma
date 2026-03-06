@@ -72,3 +72,29 @@ a:hover {
   text-align: center;
   color: #666;
 }
+/* Colores editoriales */
+
+.politica {
+  border-left: 4px solid #B11226;
+  padding-left: 16px;
+}
+
+.sociedad {
+  border-left: 4px solid #1F3C88;
+  padding-left: 16px;
+}
+
+.cultura {
+  border-left: 4px solid #F2A900;
+  padding-left: 16px;
+}
+
+.economia {
+  border-left: 4px solid #1C6B3C;
+  padding-left: 16px;
+}
+
+.opinion {
+  border-left: 4px solid #5B2D8B;
+  padding-left: 16px;
+}

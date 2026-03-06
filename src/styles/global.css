@@ -37,13 +37,45 @@ h2 {
 }
 
 .hero {
-  padding: 30px 0;
-  border-bottom: 1px solid #eee;
+  margin-top: 50px;
 }
 
-.hero h3 {
-  font-size: 28px;
-  margin-bottom: 10px;
+.hero-img {
+  width: 100%;
+  border-radius: 10px;
+  margin-bottom: 25px;
+}
+
+.hero-info {
+  max-width: 700px;
+}
+
+.hero-cat {
+  text-transform: uppercase;
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #777;
+  font-weight: bold;
+}
+
+.hero-title {
+  font-size: 42px;
+  line-height: 1.2;
+  margin: 10px 0;
+}
+
+.hero-title a {
+  text-decoration: none;
+  color: black;
+}
+
+.hero-title a:hover {
+  text-decoration: underline;
+}
+
+.hero-desc {
+  font-size: 18px;
+  color: #555;
 }
 
 .article {

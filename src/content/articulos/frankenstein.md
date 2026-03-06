@@ -1,8 +1,9 @@
 ---
 title: "¿Por qué Frankenstein tiene que ver contigo?"
-descripcion: "No es solo una historia oscura. Habla de lo que se siente cuando no eres lo que alguien esperaba."
+descripcion: "No es solo una historia oscura. Habla de la sensación de no ser lo que alguien esperaba."
 categoria: "cultura"
 fecha: 2026-03-05
+cover: "/frankenstein.jpg"
 ---
 
 ## Qué pasó

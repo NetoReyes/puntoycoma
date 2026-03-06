@@ -48,7 +48,7 @@ La noticia no termina cuando se informa; empieza cuando se entiende.
 
 <section class="hero">
 
-<article class="hero">
+<article class={`hero ${principal.data.categoria}`}>
 
 {principal.data.cover && (
   <img src={principal.data.cover} class="hero-img" />
@@ -57,7 +57,11 @@ La noticia no termina cuando se informa; empieza cuando se entiende.
 <div class="hero-info">
 
 <span class="hero-cat">
+
+<span class="cat-line"></span>
+
 {principal.data.categoria}
+
 </span>
 
 <h2 class="hero-title">
@@ -78,27 +82,33 @@ La noticia no termina cuando se informa; empieza cuando se entiende.
 
 </section>
 
-<section>
+<section class="recent">
 
 <h2>Artículos recientes</h2>
 
+<div class="cards">
+
 {recientes.map((articulo) => (
 
-<article class={`article ${articulo.data.categoria}`}>
+<a class="card" href={`/articulos/${articulo.slug}`}>
+
+{articulo.data.cover && (
+<img src={articulo.data.cover} />
+)}
+
+<span class="card-cat">
+{articulo.data.categoria}
+</span>
 
 <h3>
-
-<a href={`/articulos/${articulo.slug}`}>
 {articulo.data.title}
-</a>
-
 </h3>
 
-<p>{articulo.data.descripcion}</p>
-
-</article>
+</a>
 
 ))}
+
+</div>
 
 </section>
 

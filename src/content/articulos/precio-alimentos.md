@@ -1,6 +1,6 @@
 ---
 title: "El precio de los alimentos sigue subiendo: qué está pasando"
-descripcion: "No es solo inflación general. Algunos productos básicos han aumentado más que otros."
+descripcion: "No es solo inflación. Algunos productos básicos han aumentado más que otros."
 categoria: economia
 fecha: 2026-03-10
 cover: "/alimentos.jpg"

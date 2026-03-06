@@ -11,6 +11,7 @@ const ordenados = articulos.sort(
 
 // primer artículo = principal
 const principal = ordenados[0];
+const secundarios = articulos.slice(1,3);
 
 // resto
 const recientes = ordenados.slice(1);
@@ -46,30 +47,25 @@ La noticia no termina cuando se informa; empieza cuando se entiende.
 
 </header>
 
-<section class="hero">
+<section class="portada">
 
 <article class={`hero ${principal.data.categoria}`}>
 
 {principal.data.cover && (
-  <img src={principal.data.cover} class="hero-img" />
+<img src={principal.data.cover} class="hero-img" />
 )}
 
 <div class="hero-info">
 
 <span class="hero-cat">
-
 <span class="cat-line"></span>
-
 {principal.data.categoria}
-
 </span>
 
 <h2 class="hero-title">
-
 <a href={`/articulos/${principal.slug}`}>
 {principal.data.title}
 </a>
-
 </h2>
 
 <p class="hero-desc">
@@ -79,6 +75,67 @@ La noticia no termina cuando se informa; empieza cuando se entiende.
 </div>
 
 </article>
+
+<div class="secundarios">
+
+{secundarios.map((articulo) => (
+
+<a class={`sec-card ${articulo.data.categoria}`} href={`/articulos/${articulo.slug}`}>
+
+{articulo.data.cover && (
+<img src={articulo.data.cover} />
+)}
+
+<div class="sec-info">
+
+<span class="card-cat">
+<span class="cat-line"></span>
+{articulo.data.categoria}
+</span>
+
+<h3>
+{articulo.data.title}
+</h3>
+
+</div>
+
+</a>
+
+))}
+
+</div>
+
+</section>
+
+<section class="secundarios">
+
+{secundarios.map((articulo) => (
+
+<a class={`sec-card ${articulo.data.categoria}`} href={`/articulos/${articulo.slug}`}>
+
+{articulo.data.cover && (
+<img src={articulo.data.cover} />
+)}
+
+<div class="sec-info">
+
+<span class="card-cat">
+
+<span class="cat-line"></span>
+
+{articulo.data.categoria}
+
+</span>
+
+<h3>
+{articulo.data.title}
+</h3>
+
+</div>
+
+</a>
+
+))}
 
 </section>
 

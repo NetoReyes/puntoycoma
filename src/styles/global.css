@@ -186,3 +186,22 @@ a:hover {
   font-size: 20px;
   margin-top: 5px;
 }
+.cultura .hero-cat {
+  color: #c0392b;
+}
+
+.politica .hero-cat {
+  color: #2c3e50;
+}
+
+.sociedad .hero-cat {
+  color: #16a085;
+}
+
+.economia .hero-cat {
+  color: #d35400;
+}
+
+.opinion .hero-cat {
+  color: #8e44ad;
+}

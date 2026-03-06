@@ -4,8 +4,16 @@ import { getCollection } from "astro:content";
 
 const articulos = await getCollection("articulos");
 
-const destacado = articulos[0];
-const recientes = articulos.slice(1,5);
+// ordenar por fecha
+const ordenados = articulos.sort(
+  (a, b) => new Date(b.data.fecha) - new Date(a.data.fecha)
+);
+
+// primer artículo = principal
+const principal = ordenados[0];
+
+// resto
+const recientes = ordenados.slice(1);
 ---
 
 <html lang="es">
@@ -24,41 +32,41 @@ const recientes = articulos.slice(1,5);
 
 <body>
 
+<div class="container">
+
 <header class="header">
 
 <img src="/logo.png" class="logo" alt="Punto y coma"/>
 
-<h1>Punto y coma</h1>
+<h1>Punto y Coma</h1>
 
 <p class="tagline">
-El mundo no es complicado. Solo está mal explicado.
+La noticia no termina cuando se informa; empieza cuando se entiende.
 </p>
 
 </header>
 
-
-<main class="container">
-
-<section class="destacado">
+<section class="hero">
 
 <h2>Historia principal</h2>
 
-<article class={`hero ${destacado.data.categoria}`}>
+<article class={`article ${principal.data.categoria}`}>
 
 <h3>
-<a href={`/articulos/${destacado.slug}`}>
-{destacado.data.title}
+
+<a href={`/articulos/${principal.slug}`}>
+{principal.data.title}
 </a>
+
 </h3>
 
-<p>{destacado.data.descripcion}</p>
+<p>{principal.data.descripcion}</p>
 
 </article>
 
 </section>
 
-
-<section class="recientes">
+<section>
 
 <h2>Artículos recientes</h2>
 
@@ -67,9 +75,11 @@ El mundo no es complicado. Solo está mal explicado.
 <article class={`article ${articulo.data.categoria}`}>
 
 <h3>
+
 <a href={`/articulos/${articulo.slug}`}>
 {articulo.data.title}
 </a>
+
 </h3>
 
 <p>{articulo.data.descripcion}</p>
@@ -80,16 +90,13 @@ El mundo no es complicado. Solo está mal explicado.
 
 </section>
 
-</main>
-
-
 <footer class="footer">
 
-<p>
 Punto y coma — Explicando el mundo, una historia a la vez.
-</p>
 
 </footer>
+
+</div>
 
 </body>
 

@@ -153,3 +153,36 @@ a:hover {
   border-radius: 6px;
   margin-bottom: 16px;
 }
+.recent {
+  margin-top: 60px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px,1fr));
+  gap: 30px;
+  margin-top: 20px;
+}
+
+.card {
+  text-decoration: none;
+  color: black;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.card-cat {
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 1px;
+  color: #777;
+}
+
+.card h3 {
+  font-size: 20px;
+  margin-top: 5px;
+}

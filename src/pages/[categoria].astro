@@ -1,0 +1,70 @@
+---
+import Header from "../components/Header.astro";
+import { getCollection } from "astro:content";
+import { categorias } from "../config/categorias.js";
+
+export async function getStaticPaths() {
+
+  // generar páginas para TODAS las categorías definidas
+  const listaCategorias = Object.keys(categorias);
+
+  return listaCategorias.map(categoria => ({
+    params: { categoria },
+  }));
+}
+
+const { categoria } = Astro.params;
+
+const categoriaNormalizada = categoria?.trim().toLowerCase();
+
+const articulos = (await getCollection("articulos"))
+  .filter(a => a.data.categoria?.trim().toLowerCase() === categoriaNormalizada);
+
+---
+
+<Header />
+
+<main class="container">
+
+<h1>{categorias[categoriaNormalizada] || categoria}</h1>
+
+{articulos.length === 0 ? (
+
+<p style="margin-top:20px;color:#666;">
+Aún no hay artículos en esta sección.
+</p>
+
+) : (
+
+<div class="cards">
+
+{articulos.map((articulo) => {
+
+const cat = articulo.data.categoria?.trim().toLowerCase();
+
+return (
+
+<a href={`/articulos/${articulo.slug}`} class={`card ${cat}`}>
+
+{articulo.data.cover && (
+<img src={articulo.data.cover} />
+)}
+
+<div class="card-cat">
+<span class="cat-line"></span>
+{categorias[cat] || articulo.data.categoria}
+</div>
+
+<h3>{articulo.data.title}</h3>
+
+</a>
+
+);
+
+})}
+
+</div>
+
+)}
+
+</main>

@@ -1,6 +1,7 @@
 ---
 import "../../styles/global.css";
 import { getCollection } from "astro:content";
+import { categorias } from "../../config/categorias.js";
 
 export async function getStaticPaths() {
   const articulos = await getCollection("articulos");
@@ -14,6 +15,9 @@ export async function getStaticPaths() {
 const { articulo } = Astro.props;
 
 const { Content } = await articulo.render();
+
+// normalizar categoría
+const categoriaNormalizada = articulo.data.categoria?.trim().toLowerCase();
 ---
 
 <html lang="es">
@@ -39,6 +43,10 @@ const { Content } = await articulo.render();
 <h1>{articulo.data.title}</h1>
 
 <p class="tagline">{articulo.data.descripcion}</p>
+
+<p style="margin-top:10px;font-weight:600;">
+{categorias[categoriaNormalizada] || articulo.data.categoria}
+</p>
 
 <hr>
 

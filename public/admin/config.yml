@@ -2,6 +2,7 @@ backend:
   name: github
   repo: NetoReyes/puntoycoma
   branch: master
+  base_url: https://oauth.decapbridge.com
 
 media_folder: "public/uploads"
 public_folder: "/uploads"

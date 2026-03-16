@@ -1,4 +1,5 @@
 ---
+import Header from "../../components/Header.astro";
 import "../../styles/global.css";
 import { getCollection } from "astro:content";
 import { categorias } from "../../config/categorias.js";
@@ -18,6 +19,15 @@ const { Content } = await articulo.render();
 
 // normalizar categoría
 const categoriaNormalizada = articulo.data.categoria?.trim().toLowerCase();
+
+// formatear fecha
+const fecha = new Date(articulo.data.fecha);
+
+const fechaFormateada = fecha.toLocaleDateString("es-MX", {
+  year: "numeric",
+  month: "long",
+  day: "numeric"
+});
 ---
 
 <html lang="es">
@@ -36,17 +46,17 @@ const categoriaNormalizada = articulo.data.categoria?.trim().toLowerCase();
 
 <body>
 
+<Header />
+
 <div class="container">
 
-<a href="/">← Punto y Coma</a>
+<p style="font-size:13px;font-weight:600;text-transform:uppercase;color:#666;letter-spacing:1px;margin-bottom:10px;">
+{categorias[categoriaNormalizada] || articulo.data.categoria} — {fechaFormateada}
+</p>
 
 <h1>{articulo.data.title}</h1>
 
 <p class="tagline">{articulo.data.descripcion}</p>
-
-<p style="margin-top:10px;font-weight:600;">
-{categorias[categoriaNormalizada] || articulo.data.categoria}
-</p>
 
 <hr>
 

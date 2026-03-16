@@ -1,11 +1,10 @@
 ---
 import Header from "../components/Header.astro";
+import "../styles/global.css";
 import { getCollection } from "astro:content";
 import { categorias } from "../config/categorias.js";
 
 export async function getStaticPaths() {
-
-  // generar páginas para TODAS las categorías definidas
   const listaCategorias = Object.keys(categorias);
 
   return listaCategorias.map(categoria => ({
@@ -19,8 +18,24 @@ const categoriaNormalizada = categoria?.trim().toLowerCase();
 
 const articulos = (await getCollection("articulos"))
   .filter(a => a.data.categoria?.trim().toLowerCase() === categoriaNormalizada);
-
 ---
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<title>{categorias[categoriaNormalizada] || categoria} — Punto y Coma</title>
+
+</head>
+
+<body>
 
 <Header />
 
@@ -68,3 +83,6 @@ return (
 )}
 
 </main>
+
+</body>
+</html>
